@@ -627,6 +627,7 @@ body {
 
         @include offer-breakpoint {
           font-size: 2rem;
+          text-align: left;
         }
       }
     }
@@ -683,7 +684,7 @@ body {
         transition: scale .5s;
 
         box-shadow: 0 0px 10px var(--AZUL);
-        animation: wavebutton 6s ease-out infinite;
+        animation: wavebutton 4s ease-out infinite;
 
         &:hover {
           scale: 1.2;

@@ -1,0 +1,25 @@
+version: "3.3"
+
+services:
+  cursoheadlines-pv:
+    image: cursoheadlines-pv
+    container_name: cursoheadlines-pv
+    networks:
+      - traefik-net
+    # ports:
+    #   - 81:80
+    labels:
+      - traefik.enable=true
+      
+      - traefik.http.routers.cursoheadlines.rule=Host(`localhost`) && Path(`/curso-headlines`)
+      # - traefik.http.routers.cursoheadlines.entrypoints=websecure
+      - traefik.http.routers.cursoheadlines.entrypoints=web
+      # - traefik.http.routers.cursoheadlines.tls.certresolver=letsencrypt-resolver
+      # - traefik.http.routers.minio-api.tls=true
+      - traefik.http.services.cursoheadlines.loadbalancer.server.port=80
+      - traefik.http.routers.cursoheadlines.service=cursoheadlines
+
+networks:
+  traefik-net:
+    external: true
+      
