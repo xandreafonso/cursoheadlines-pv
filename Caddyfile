@@ -1,0 +1,4 @@
+alexandreafonso.com.br {
+	root * /usr/share/caddy
+	file_server
+}

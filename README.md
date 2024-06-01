@@ -31,8 +31,16 @@ pnpm run build
 
 ## Criar a imagem Docker
 
+Criar imagem usando o Nginx:
+
 ```shell
-docker build -t cursoheadlines-pv .
+docker build -f Dockerfile.nginx -t cursoheadlines-pv .
+```
+
+Criar imagem usando o Caddy:
+
+```shell
+docker build -f Dockerfile.caddy -t cursoheadlines-pv:v1.0 .
 ```
 
 ## Rodar o container Docker
@@ -42,5 +50,25 @@ docker run -d --rm -p 80:80 --name cursoheadlines-pv cursoheadlines-pv
 ```
 
 Acesse em http://localhost/curso-headlines
+
+## Enviar para o Docker Hub
+
+```shell
+docker tag cursoheadlines-pv:v1.0 xandreafonso/cursoheadlines-pv:v1.0
+docker tag cursoheadlines-pv:v1.0 xandreafonso/cursoheadlines-pv:latest
+```
+
+Depois faz login no docker registry.
+
+```shell
+docker login
+```
+
+Depois envia as imagens.
+
+```shell
+docker push xandreafonso/cursoheadlines-pv:v1.0
+docker push xandreafonso/cursoheadlines-pv:latest
+```
 
 
