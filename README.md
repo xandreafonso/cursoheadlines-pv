@@ -71,4 +71,8 @@ docker push xandreafonso/cursoheadlines-pv:v1.0
 docker push xandreafonso/cursoheadlines-pv:latest
 ```
 
+# Executar a versão com Caddy
 
+```shell
+docker run -d -p 80:80 -p 443:433 --name cursoheadlines-pv xandreafonso/cursoheadlines-pv
+```

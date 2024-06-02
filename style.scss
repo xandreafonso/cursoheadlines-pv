@@ -59,9 +59,6 @@ button {
   --AZUL: #6597E1;
   --FOSCO: #1E1E1E;
   --AMARELO: #FFDE59;
-  
-  --AZUL_RGB: 101, 151, 225;
-  --FOSCO_RGB: 30, 30, 30;
 
   --RADIUS: 0.4rem;
 }
@@ -98,14 +95,14 @@ body {
 
 .section {
   width: 100%;
+
   display: flex;
   align-items: center;
   justify-content: center;
 
   .section-center {
-    width: 80vw;
-    width: 1400px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 1400px;
     padding-inline: 3rem;
   }
 }
