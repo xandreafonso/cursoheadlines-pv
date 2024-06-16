@@ -2,6 +2,14 @@
 
 Essa é a página de vendas do meu curso para profissionais de marketing aprenderem sobre a criação de headlines persuasivas e criativas.
 
+# Alterações
+
+FAQ:
+- Quanto tempo de acesso tem o curso?
+- O Curso é sobre fórmulas de headlines?
+- O que não é o curso?
+
+
 # EXECUTAR
 
 ## O path de acesso à página
@@ -75,4 +83,10 @@ docker push xandreafonso/cursoheadlines-pv:latest
 
 ```shell
 docker run -d -p 80:80 -p 443:433 --name cursoheadlines-pv xandreafonso/cursoheadlines-pv
+```
+
+# Outros
+
+```shell
+caddy file-server --browse --listen 9090
 ```
