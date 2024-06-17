@@ -5,21 +5,14 @@ services:
     image: cursoheadlines-pv
     container_name: cursoheadlines-pv
     networks:
-      - traefik-net
-    # ports:
-    #   - 81:80
+      - cursoheadlines-pv-net
     labels:
-      - traefik.enable=true
-      
-      - traefik.http.routers.cursoheadlines.rule=Host(`localhost`) && Path(`/curso-headlines`)
-      # - traefik.http.routers.cursoheadlines.entrypoints=websecure
-      - traefik.http.routers.cursoheadlines.entrypoints=web
-      # - traefik.http.routers.cursoheadlines.tls.certresolver=letsencrypt-resolver
-      # - traefik.http.routers.minio-api.tls=true
-      - traefik.http.services.cursoheadlines.loadbalancer.server.port=80
-      - traefik.http.routers.cursoheadlines.service=cursoheadlines
+      - traefik.enable=true      
+      - traefik.http.routers.cursoheadlines.tls.certresolver=letsencrypt-resolver      
+      - traefik.http.routers.cursoheadlines.rule=Host(`alexandreafonso.com.br`)
+      - traefik.http.routers.cursoheadlines.entrypoints=websecure
 
 networks:
-  traefik-net:
-    external: true
+  cursoheadlines-pv-net:
+    name: cursoheadlines-pv-net
       

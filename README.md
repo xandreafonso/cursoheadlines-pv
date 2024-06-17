@@ -79,10 +79,20 @@ docker push xandreafonso/cursoheadlines-pv:v1.0
 docker push xandreafonso/cursoheadlines-pv:latest
 ```
 
-# Executar a versão com Caddy
+# Executar a versão com Caddy (enviada para o Docker Hub)
 
 ```shell
 docker run -d -p 80:80 -p 443:433 --name cursoheadlines-pv xandreafonso/cursoheadlines-pv
+```
+
+# Executar com Traefik e Portainer
+
+```shell
+docker save cursoheadlines-pv -o cursoheadlines-pv.tar
+scp cursoheadlines-pv.tar root@5.161.117.216:/root/cursoheadlines-pv/
+ssh root@5.161.117.216
+cd /root/cursoheadlines-pv/
+docker load -i cursoheadlines-pv.tar
 ```
 
 # Outros
