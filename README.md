@@ -100,3 +100,22 @@ docker load -i cursoheadlines-pv.tar
 ```shell
 caddy file-server --browse --listen 9090
 ```
+
+# Rodar na rede local
+
+## Roda o projeto na rede local
+
+```shell
+pnpm run dev --host
+```
+
+```shell
+# Windows
+netsh interface portproxy add v4tov4 listenport=5173 listenaddress=0.0.0.0 connectport=5173 connectaddress=IP_WSL
+
+# Listar
+netsh interface portproxy show all
+
+# Deletar
+netsh interface portproxy delete v4tov4 listenport=5173 listenaddress=0.0.0.0
+```
