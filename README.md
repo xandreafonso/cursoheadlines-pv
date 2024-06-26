@@ -95,6 +95,8 @@ cd /root/cursoheadlines-pv/
 docker load -i cursoheadlines-pv.tar
 ```
 
+Feito isso, preciso atualizar a Stack no Portainer.
+
 # Outros
 
 ```shell
