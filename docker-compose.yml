@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   cursoheadlines-pv:
-    image: cursoheadlines-pv
+    image: xandreafonso/cursoheadlines-pv
     container_name: cursoheadlines-pv
     networks:
       - cursoheadlines-pv-net
